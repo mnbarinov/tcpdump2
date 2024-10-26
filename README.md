@@ -1,5 +1,5 @@
 # tcpdump2
-
+[Click for English version](README_EN.md)
 ## Описание
 
 Скрипт `tcpdump2` предназначен для автоматизации 
