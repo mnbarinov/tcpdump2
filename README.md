@@ -1,5 +1,8 @@
 # tcpdump2
+<img src="tcpdump12.svg" alt="Tcpdump2 Script is Here" width=200 align=right >
+
 [Click for English version](README_EN.md)
+
 ## Описание
 
 Скрипт `tcpdump2` предназначен для автоматизации 
