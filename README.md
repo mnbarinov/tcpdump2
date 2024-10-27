@@ -1,5 +1,5 @@
 # tcpdump2
-<img src="tcpdump12.svg" alt="Tcpdump2 Script is Here" width=200 align=right >
+<img src="tcpdump12.svg" alt="Tcpdump2 Script is Here" width=160 align=right >
 
 [Click for English version](README_EN.md)
 
