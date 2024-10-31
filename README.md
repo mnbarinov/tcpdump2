@@ -1,9 +1,9 @@
 # tcpdump2
-<img src="tcpdump12.svg" alt="Tcpdump2 Script is Here" width=160 align=right >
 
 [Click for English version](README_EN.md)
 
 ## Описание
+<img src="tcpdump12.svg" alt="Tcpdump2 Script is Here" width=160 align=right >
 
 Скрипт `tcpdump2` предназначен для автоматизации 
 работы с утилитой `tcpdump`, упрощая процесс диагностики и поиска неисправностей в сетевых соединениях. 
