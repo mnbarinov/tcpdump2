@@ -81,3 +81,5 @@ tcpdump2 -i eth0 bgp
 If you have ideas for improving the script or have found bugs, feel free to open pull requests or leave your comments in the Issues section.
 
 Thank you for using tcpdump2! We hope it becomes a useful tool in your work.
+
+<img src="t2banner.jpg" alt="Tcpdump2 Script: Just Try It" width=100% align=center >
