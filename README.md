@@ -1,4 +1,4 @@
-# tcpdump2
+# tcpdump2 script
 <img src="t2header.jpg" alt="Tcpdump2 Script: Just Try It" width=100% align=center >
 
 [Click for English version](README_EN.md)
