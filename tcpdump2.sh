@@ -59,6 +59,8 @@ declare -A PROTOCOLS=(
     [port_hopping]="Port hopping"
     [burst]="Traffic burst"
     [suspicious_traffic]="Suspicious traffic"
+    [telnet]="Telnet traffic"
+    [kms]="Windows activation"
     )
 
 
@@ -85,12 +87,13 @@ case "$PROTOCOL" in
         FILTER="$PROTOCOL"
         ;;
     
+    
     # Группы протоколов
     vpn)
         FILTER="proto gre or udp port 1194 or udp port 51820 or tcp port 1723"
         ;;
     routing)
-        FILTER="tcp port 179 or proto ospf or udp port 520 or ip proto 88 or proto isis or ether proto 0x88cc"
+        FILTER="tcp port 179 or proto ospf or udp port 520" # or ip proto 88 or proto isis or ether proto 0x88cc"
         ;;
     p2p)
         FILTER="tcp portrange 6881-6889 or udp portrange 6881-6889 or tcp port 4662 or udp port 4665 or tcp port 6346"
@@ -267,6 +270,14 @@ case "$PROTOCOL" in
     suspicious_traffic)
         # Необычные объемы трафика
         FILTER="tcp or udp"
+        ;;
+    telnet)
+         #telnet
+         FILTER="tcp port 23"
+        ;;
+    kms)
+        #windows kms
+        FILTER="tcp port 1688"
         ;;
     *)
         echo "Unsupported protocol or group: $PROTOCOL"
