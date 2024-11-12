@@ -1,7 +1,7 @@
 #!/bin/bash
 # Mikhail Barinov <dev#mbarinov.ru>
 # Tcpdump  Script
-# Version 1.1
+# Version 1.2
 
 # Определяем ассоциативный массив для поддерживаемых протоколов и групп
 declare -A PROTOCOLS=(
