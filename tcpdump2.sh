@@ -1,7 +1,7 @@
 #!/bin/bash
 # Mikhail Barinov <dev#mbarinov.ru>
 # Tcpdump Script
-# Version 2.2
+# Version 2.3
 
 # Определяем ассоциативный массив для поддерживаемых протоколов и групп
 declare -A PROTOCOLS=(
@@ -72,6 +72,7 @@ if [ "$#" -lt 3 ] || [ "$1" != "-i" ]; then
     echo "  -c <count>      Limit the number of packets to capture"
     echo "  -h              Capture only headers (no payload)"
     echo "  -m <mac>        Filter by MAC address"
+    echo "  -host <IP>      Filter by HOST address"
     echo "  -vlan <vlan>    Filter by VLAN ID"
     echo "  -p <port_range> Filter by port range"
     echo "  -t <time>       Capture for a specific time (in seconds)"
@@ -87,6 +88,7 @@ fi
 # Интерфейс и протокол или группа
 INTERFACE=$2
 PROTOCOL=$3
+
 
 # Параметры по умолчанию
 OUTPUT_FILE=""
@@ -138,6 +140,10 @@ while [[ "$#" -gt 0 ]]; do
         -color)
             COLOR_OUTPUT="yes"
             shift
+            ;;
+	-host)
+             HOST_FILTER="and host $2"
+            shift 2
             ;;
         *)
             ADDITIONAL_FILTERS="$ADDITIONAL_FILTERS and $1"
@@ -308,7 +314,7 @@ case "$PROTOCOL" in
 esac
 
 # Добавление дополнительных фильтров
-FILTER="$FILTER $MAC_FILTER $VLAN_FILTER $PORT_RANGE $SIZE_FILTER $ADDITIONAL_FILTERS"
+FILTER="$FILTER $MAC_FILTER $HOST_FILTER $VLAN_FILTER $PORT_RANGE $SIZE_FILTER $ADDITIONAL_FILTERS"
 
 # Запуск tcpdump
 CMD="tcpdump -i $INTERFACE \"$FILTER\" $PACKET_COUNT $HEADERS_ONLY"
