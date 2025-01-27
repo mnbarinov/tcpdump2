@@ -55,6 +55,7 @@ tcpdump2 -i <interface_name> <FILTER> [additional_options]
     - -c <count> — limit the number of captured packets.
     - -h — capture only packet headers.
     - -m <MAC> — filter by MAC address.
+    - -host <IP> — filter by IP address.
     - -vlan <VLAN> — filter by VLAN ID.
     - -p <port_range> — filter by port range.
     - -t <time> — capture traffic for a specified duration (in seconds).
@@ -81,6 +82,10 @@ tcpdump2 -i eth0 dns -c 100
 ### Capture traffic filtered by MAC address:
 ```
 tcpdump2 -i eth0 tcp -m 00:11:22:33:44:55
+```
+### Capture traffic filtered by IP address:
+```
+tcpdump2 -i eth0 tcp -host 8.8.8.8
 ```
 ### Capture traffic for port range 1000-2000:
 ```
