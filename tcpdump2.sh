@@ -278,7 +278,7 @@ case "$PROTOCOL" in
         FILTER="(udp port 514)"
         ;;
     scan)
-        FILTER="(tcp[tcpflags] & (tcp-syn|tcp-fin|tcp-rst|tcp-psh|tcp-urg) != 0)"
+        FILTER="tcp[tcpflags] & (tcp-syn) != 0 and tcp[tcpflags] & (tcp-ack) == 0"
         ;;
     ddos)
         FILTER="(icmp or udp portrange 33434-33600 or udp port 80 or udp port 53)"
